@@ -12,6 +12,7 @@ import "validate/validate.proto";
 
 // TODO(mattklein123): docs
 
+// fixfix
 message UdpProxyConfig {
   oneof cluster_specifier {
     option (validate.required) = true;
@@ -19,4 +20,7 @@ message UdpProxyConfig {
     // The upstream cluster to connect to.
     string cluster = 1 [(validate.rules).string = {min_bytes: 1}];
   }
+
+  // fixfix
+  google.protobuf.Duration idle_timeout = 2;
 }
